@@ -10,23 +10,25 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.lightBlueAccent,
         title: Text('Home Page'),
       ),
       body: Center(
         child: Container(
-          height: 80,
+          height: 50,
           width: 150,
           decoration: BoxDecoration(
-              color: Colors.blue, borderRadius: BorderRadius.circular(10)),
+              color: Colors.lightBlueAccent, borderRadius: BorderRadius.circular(20)),
           child: FlatButton(
             onPressed: () {
               Navigator.pop(context);
             },
             child: Text(
-              'Welcome',
-              style: TextStyle(color: Colors.white, fontSize: 25),
+              'Log out',
+              style: TextStyle(color: Colors.white, fontSize: 15),
             ),
           ),
+
         ),
       ),
     );
