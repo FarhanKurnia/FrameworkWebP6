@@ -1,7 +1,7 @@
 # Login Page Flutter Application
 
 Flutter project untuk submission UTS Mata Kuliah Framework Mobile.
-</ br> Meliputi Materi yang telah dipelajari:
+</br> Meliputi Materi yang telah dipelajari:
 - layout (row, column) --> responsive (orientation: landscape, potrait)
 - widget flutter (scaffold: appbar & container)
 - widget flutter (stateless & statefull)
