@@ -41,7 +41,7 @@ class _LoginDemoState extends State<LoginDemo> {
                 child: Container(
                     width: 200,
                     height: 150,
-                    //Widget:child untuk gambar logo tampilan login
+                    //Widget:child untuk gambar logo pada tampilan login
                     child: Image.asset('asset/images/flutter-logo-bird.png')),
               ),
             ),
@@ -60,7 +60,7 @@ class _LoginDemoState extends State<LoginDemo> {
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
-              //Widget: child untuk Textfield Password
+              //Widget: child text untuk Textfield Password
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
@@ -73,7 +73,7 @@ class _LoginDemoState extends State<LoginDemo> {
               onPressed: (){
                 //TODO FORGOT PASSWORD SCREEN GOES HERE
               },
-              //Widget: child untuk Flatbutton hyperlink lupa password
+              //Widget: child text untuk Flatbutton hyperlink lupa password
               child: Text(
                 'Forgot Password',
                 style: TextStyle(color: Colors.black12, fontSize: 15),
@@ -84,11 +84,13 @@ class _LoginDemoState extends State<LoginDemo> {
               width: 150,
               decoration: BoxDecoration(
                   color: Colors.lightBlueAccent, borderRadius: BorderRadius.circular(20)),
+              //Widget: child untuk Flatbutton Login
               child: FlatButton(
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => HomePage()));
                 },
+                //Widget: child untuk text Login dalam button
                 child: Text(
                   'Login',
                   style: TextStyle(color: Colors.white, fontSize: 20),
@@ -102,7 +104,7 @@ class _LoginDemoState extends State<LoginDemo> {
               onPressed: (){
                 //TODO FORGOT PASSWORD SCREEN GOES HERE
               },
-              //Widget: child untuk flatbutton hyperlink Create Account
+              //Widget: child untuk text flatbutton hyperlink Create Account
               child: Text(
                 'New User? Create Account',
                 style: TextStyle(color: Colors.black12, fontSize: 15),
