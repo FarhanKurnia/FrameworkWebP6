@@ -73,7 +73,7 @@ class _LoginDemoState extends State<LoginDemo> {
               onPressed: (){
                 //TODO FORGOT PASSWORD SCREEN GOES HERE
               },
-              //Widget: child untuk hyperlink lupa password
+              //Widget: child untuk Flatbutton hyperlink lupa password
               child: Text(
                 'Forgot Password',
                 style: TextStyle(color: Colors.black12, fontSize: 15),
@@ -102,7 +102,7 @@ class _LoginDemoState extends State<LoginDemo> {
               onPressed: (){
                 //TODO FORGOT PASSWORD SCREEN GOES HERE
               },
-              //Widget: child untuk hyperlink lupa password
+              //Widget: child untuk flatbutton hyperlink Create Account
               child: Text(
                 'New User? Create Account',
                 style: TextStyle(color: Colors.black12, fontSize: 15),
