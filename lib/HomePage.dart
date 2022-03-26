@@ -19,10 +19,12 @@ class _HomePageState extends State<HomePage> {
           width: 150,
           decoration: BoxDecoration(
               color: Colors.lightBlueAccent, borderRadius: BorderRadius.circular(20)),
+          //Widget: child flatbutton Logout
           child: FlatButton(
             onPressed: () {
               Navigator.pop(context);
             },
+            //Widget: child text dalam flatbutton logout
             child: Text(
               'Log out',
               style: TextStyle(color: Colors.white, fontSize: 15),
