@@ -56,7 +56,7 @@ class _LoginDemoState extends State<LoginDemo> {
             Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
-              //Widget: child untuk Textfield E-Mail
+              //Widget: child Textfield Email agar user dapat melakukan input email
               child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
