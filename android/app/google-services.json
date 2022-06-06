@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "440928392501",
+    "project_id": "fir-flutter-1ef35",
+    "storage_bucket": "fir-flutter-1ef35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440928392501:android:8eede4765ecd2b1388e87c",
+        "android_client_info": {
+          "package_name": "com.example.loginpage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440928392501-4lsgsnvupeheb9jig5qk0je0jtqicidf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo1syuYXr-qnzVmvqxwZT38UsOse_kmI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440928392501-4lsgsnvupeheb9jig5qk0je0jtqicidf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "440928392501-cftvhe73239pjchohak8itcjr04popjg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.loginpage"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
