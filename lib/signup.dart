@@ -50,9 +50,10 @@ class _SignupState extends State<Signup> {
               ),
 
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   SizedBox(width: 30),
-                  Text('Already here  ?', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black38,fontSize: 15)),
+                  Text('Already here? ', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black38,fontSize: 15)),
                   GestureDetector(
                     onTap: () {
                       // Navigator.pushNamed(context, '/signup');
@@ -65,6 +66,9 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 50,
               ),
             ],
           ),
@@ -207,7 +211,7 @@ class _SignupFormState extends State<SignupForm> {
             ],
           ),
           SizedBox(
-            height: 10,
+            height: 30,
           ),
 
           // signUP button

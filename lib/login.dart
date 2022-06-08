@@ -42,9 +42,9 @@ class _LoginState extends State<Login> {
               ),
             ),
             //digunakan untuk memberikan Padding
-            SizedBox(
-              height: 50,
-            ),
+            // SizedBox(
+            //   height: 50,
+            // ),
 
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -54,8 +54,8 @@ class _LoginState extends State<Login> {
             // SizedBox(height: 20),
 
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(width: 30),
                 Text('New User?', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black38,fontSize: 15)),
                 GestureDetector(
                   onTap: () {
@@ -69,6 +69,9 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 50,
             ),
 
             // Padding(
