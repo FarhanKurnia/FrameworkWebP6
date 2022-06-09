@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'dart:io';
 
+// for handling handshake problem (CERTIFICATE_VERIFY_FAILED) htttp request mengizinkan semua request http
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
