@@ -1,7 +1,10 @@
+// Import pacakge material untuk tampilan seperti scafold
 import 'package:flutter/material.dart';
+//import class login untuk navigasi
 import 'package:loginpage/login.dart';
+// import class authentication karena sebagai controller yang berisi fungsi untuk ke firebase nya
 import 'authentication.dart';
-import 'homepage.dart';
+//import class login untuk navigasi login
 import 'login.dart';
 
 //Statefulwidget digunakan untuk menampilkan data-data yang bersifat dinamis (dapat mengalami perubahan)
@@ -19,9 +22,10 @@ class _SignupState extends State<Signup> {
         appBar: AppBar(
           //background color app bar
           backgroundColor: Colors.lightBlueAccent,
-          //Tittle halaman login
+          //Tittle halaman register
           title: Text("Register"),
         ),
+        // Widget body dengan scroll view
         body: SingleChildScrollView(
           //widget column mengatur tata letak atau posisi widget secara vertikal (dari atas ke bawah)
           child: Column(
@@ -41,26 +45,25 @@ class _SignupState extends State<Signup> {
                   ),
                 ),
               ),
-              //digunakan untuk memberikan Padding
-              // SizedBox(height: 50,),
-
+              //Digunakan untuk memberikan Padding dan child sign up form yang terpisah
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SignupForm(),
               ),
-
+              // Row digunakan untuk membuat hyperlink yang mengarah ke login jika sudah memiliki akun
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   SizedBox(width: 30),
+                  // hanya sebagai text
                   Text('Already here? ', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black38,fontSize: 15)),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.pushNamed(context, '/signup');
+                      // Navigasi untuk ke halaman login jika disentuh
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Login()));
                     },
-                    //Widget: child untuk text flatbutton hyperlink register atau Create Account
+                    // text hyperlink ke login
                     child: Text(
                       'Get Logged in Now!', style: TextStyle(color: Colors.blueAccent, fontSize: 15),
                     ),
@@ -77,6 +80,7 @@ class _SignupState extends State<Signup> {
   }
 }
 
+// class untuk signup form yang dipanggil pada child diatas
 class SignupForm extends StatefulWidget {
   SignupForm({Key? key}) : super(key: key);
 
@@ -84,14 +88,16 @@ class SignupForm extends StatefulWidget {
   _SignupFormState createState() => _SignupFormState();
 }
 
+// extend class signuoform
 class _SignupFormState extends State<SignupForm> {
   final _formKey = GlobalKey<FormState>();
-
+  // Pendefinisian variabel dari email password dan name
   String? email;
   String? password;
   String? name;
   bool _obscureText = false;
 
+  // posisi agreement false artinya tidak tercentang saat awal ditampilkan (nilai default)
   bool agree = false;
 
   final pass = new TextEditingController();
@@ -103,19 +109,21 @@ class _SignupFormState extends State<SignupForm> {
         const Radius.circular(100.0),
       ),
     );
-
+    // definisi variabel sebagai ruang dengan tinggi 10 yang nantinya dapat digunakan hanya tinggal memanggil variabel
     var space = SizedBox(height: 10);
+    // mengmbalikan form
     return Form(
       key: _formKey,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          // email
+          // Field form untuk input email
           TextFormField(
             decoration: InputDecoration(
                 prefixIcon: Icon(Icons.email_outlined),
                 labelText: 'Email',
                 border: border),
+            // Widget untuk validasi email jika email terisi atau kosong
             validator: (value) {
               if (value!.isEmpty) {
                 return 'Please enter some text';
@@ -128,9 +136,10 @@ class _SignupFormState extends State<SignupForm> {
             keyboardType: TextInputType.emailAddress,
           ),
 
+          // memanggil variable space yang mendefinisikan sizexbox diatas
           space,
 
-          // password
+          // Widget untuk validasi email jika email terisi atau kosong
           TextFormField(
             controller: pass,
             decoration: InputDecoration(
@@ -152,6 +161,7 @@ class _SignupFormState extends State<SignupForm> {
               password = val;
             },
             obscureText: !_obscureText,
+            // Widget untuk validasi jika password terisi atau kosong
             validator: (value) {
               if (value!.isEmpty) {
                 return 'Please enter some text';
@@ -159,8 +169,9 @@ class _SignupFormState extends State<SignupForm> {
               return null;
             },
           ),
+          // memanggil space perisi sizedbox untuk memberikan ruang
           space,
-          // confirm passwords
+          // Widget untuk field konfirmasi password
           TextFormField(
             decoration: InputDecoration(
               labelText: 'Confirm Password',
@@ -168,6 +179,8 @@ class _SignupFormState extends State<SignupForm> {
               border: border,
             ),
             obscureText: true,
+            // validasi apakah input yang dimasukan sama dengan password -> nilai variabel pass
+            // jika tida sama maka akan menampilkan password tidak cocok
             validator: (value) {
               if (value != pass.text) {
                 return 'password not match';
@@ -176,7 +189,7 @@ class _SignupFormState extends State<SignupForm> {
             },
           ),
           space,
-          // name
+          // Widget untuk field Nama
           TextFormField(
             decoration: InputDecoration(
               labelText: 'Full name',
@@ -184,8 +197,10 @@ class _SignupFormState extends State<SignupForm> {
               border: border,
             ),
             onSaved: (val) {
+              // akan disimpan dalam variabel name
               name = val;
             },
+            // Validasi jika nilainya kosong
             validator: (value) {
               if (value!.isEmpty) {
                 return 'Please enter some name';
@@ -194,6 +209,7 @@ class _SignupFormState extends State<SignupForm> {
             },
           ),
 
+          // Row untuk checkbox jika dilakukan perubahan maka akan benilai agree
           Row(
             children: <Widget>[
               Checkbox(
@@ -204,9 +220,10 @@ class _SignupFormState extends State<SignupForm> {
                 },
                 value: agree,
               ),
+              // text untuk penjelasan agreement
               Flexible(
                 child: Text(
-                    'By creating account, I agree to Terms & Conditions and Privacy Policy.'),
+                    'By creating account, I agree to Terms & Conditions and Privacy Policy. This apps developed with <3 by Farhan Kurnia'),
               ),
             ],
           ),
@@ -214,22 +231,26 @@ class _SignupFormState extends State<SignupForm> {
             height: 30,
           ),
 
-          // signUP button
+          // Widget tombol untuk sign up
           SizedBox(
             height: 50,
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
+                //Jika diklik akan melakukan validasi dan jika lolos validasi maka akan disimpan
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-
+                  // disini authentikasi helper (yang saya jadikan ibaratnya sebagai controller) dipanggil
                   AuthenticationHelper()
+                      // akan menjalankan fungsi sign up yang ada di class auth
                       .signUp(email: email!, password: password!)
                       .then((result) {
                     if (result == null) {
+                      // setelah itu akan diarahkan ke halaman login
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) => Login()));
                     } else {
+                      //scafold untuk pesan snackbar
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text(
                           result,
@@ -240,6 +261,7 @@ class _SignupFormState extends State<SignupForm> {
                   });
                 }
               },
+              // styling dari tombol sign up termasuk test di dalam tombolnya
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(24.0)))),
